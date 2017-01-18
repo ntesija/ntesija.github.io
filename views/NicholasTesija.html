@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
+		<script type="text/javascript" src="../controller/portfolioController.js"></script>
+		<link type="text/css" rel="stylesheet" href="../style/stylesheet.css">
+	</head>
+	
+	<body ng-app="portfolio">
+		<div ng-controller="portfolioController">
+			<center><h1>Nicholas I. Tesija</h1></center>
+			<div class="content-container">
+				<div class="content-wrapper" ng-class="{'programming-swipe': showProgramming, 'main-swipe-from-programming': swipeFromProgramming, 'music-swipe' : showMusic, 'main-swipe-from-music' : swipeFromMusic}">
+					<div class="main-page-content">
+						<span class="home-container">
+							<div class="portrait-container">
+								<img class="portrait" src="../images/portrait.png" width="250" height="267">
+							</div>
+						</span>
+						<div class="programming-btn-container">
+							<img ng-click="programmingButton()" class="image-btn programming-anchor" src="../images/programming.png" width="200" width="200" />
+						</div>
+						<div class="programming-btn-container music-btn">
+							<img ng-click="musicButton()" class="image-btn music-anchor" src="../images/music.png" width="200" width="200" />
+						</div>
+					</div>
+					<div class="programming-content">
+						<div class="side-content-container">
+							<button class="btn btn-right" ng-click="backButton(true)">Main Page <span class="glyphicon glyphicon-arrow-right"></span></button>
+							<div>
+								<center><h1>Programming</h1></center>
+							</div>
+							<div class="content-description">
+								{{programmingDescription}}
+							</div>
+							<div class="programming-projects">
+								<div class="project">
+									<center><h3>Train Track Trouble</h3></center>
+									<img src="../images/TTT.png" height="180" width="288"/>
+									<center><a href="../downloads/TrainTrackTrouble.7z" download>download</a></center>
+									<center>Battle your friends in a 2v2 train brawl!</center>
+								</div>
+								<div class="project">
+									<center><h3>Heart Hop</h3></center>
+									<img src="../images/ButtonPush.gif" height="180" width="288"/>
+									<center><a href="../downloads/HeartHop.7z" download>download</a></center>
+									<center>Destroy the enemy hearts or hit their button. Grab 8 people!</center>
+								</div>
+								<div class="project">
+									<center><h3>Throne Throttle</h3></center>
+									<img src="../images/ThroneThrottle.png" height="180" width="288"/>
+									<center><a href="../downloads/ThroneThrottle.7z" download>download</a></center>
+									<center>Capture the hill while driving cars!</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="music-content">
+						<div class="side-content-container">
+							<div class="music-content-nav-bar">
+								<button class="btn" ng-click="backButton(false)"><span class="glyphicon glyphicon-arrow-left"></span> Main Page</button>
+								<center><h1>Music</h1></center>
+							</div>
+							<div class="content-description">
+								{{musicDescription}}
+							</div>
+							<div class="music-content-soundcloud">
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270103307&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235173886&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/185797860&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/185796989&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/185776365&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								<iframe width="33%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/185797858&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="more-info">
+				<center>
+					<h4>More Information</h4>
+					<div class="more-info-btn-container">
+						<button class="btn more-info-btn" ng-click="mailTo()"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+						<button class="btn more-info-btn" ng-click="redirectToLinkedIn()"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+						<button class="btn more-info-btn" ng-click="redirectToGitHub()"><i class="fa fa-github" aria-hidden="true"></i></button>
+					</div>
+				</center>
+			</div>
+		</div>
+	</body>
+</html>
