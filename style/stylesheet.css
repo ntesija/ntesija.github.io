@@ -51,6 +51,7 @@ body {
 
 .programming-projects {
 	display: flex;
+	justify-content: center;
 }
 
 .project {
