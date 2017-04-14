@@ -17,6 +17,24 @@
   border-radius: 50%;
 }
 
+.is-compact .portfolio-logo {
+  height: 40px;
+  width: 40px;
+  margin-top: 7px;
+}
+
+.is-compact .mdl-layout__title span {
+  display: none;
+}
+
+.is-compact .email {
+  display: none;
+}
+
+.is-compact .portfolio-header-row {
+  min-height: auto;
+}
+
 .mdl-layout__header-row {
   justify-content: center;
   -webkit-justify-content: center;
