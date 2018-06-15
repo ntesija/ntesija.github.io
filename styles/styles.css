@@ -4,7 +4,6 @@ body {
 }
 
 div {
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -16,6 +15,7 @@ a {
   text-decoration: none;
   font-size: 18px;
   cursor: pointer;
+  color: #8087c9;
 }
 
 a:hover {
@@ -33,6 +33,7 @@ a:hover {
 }
 
 .header {
+  width: 100%;
   position: fixed;
   padding: 10px 20px;
 }
@@ -70,11 +71,54 @@ a:hover {
 }
 
 .card {
-  height: 200px;
-  width: 600px;
+  min-height: 200px;
+  max-width: 900px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  font-size: 20px;
-  padding: 15px;
+  font-size: 18px;
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-image {
+  height: 200px;
+  width: 350px;
+  flex: 0 1 auto;
+}
+
+.card-content {
+  padding: 15px;
+  height: 200px;
+  flex: 1 1 auto;
+  word-wrap: break-word;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  flex: 1 0 auto;
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom:10px;
+}
+
+.link {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-right: 20px;
+    max-width: 350px;
+  }
 }
