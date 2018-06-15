@@ -39,7 +39,6 @@ a:hover {
 }
 
 .portfolio-logo {
-  background: url(../images/portrait.png) 50% no-repeat;
   background-size: cover;
   height: 100px;
   width: 100px;
