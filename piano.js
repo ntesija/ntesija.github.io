@@ -264,9 +264,7 @@ addEventListener('mousedown', () => {
       const frequency = Number(key.getAttribute('data-freq')) ?? 0;
       const keyCode = freqToKeyMap.get(frequency) ?? '';
 
-      addEventListener('keydown', event => {
-         if (event.code !== keyCode || event.repeat) return;
-
+      function playNote() {
          const currentVoiceSet = voices.slice(0, currentVoiceCount);
          const inactiveVoces = currentVoiceSet.filter(voice => !voice.isActive);
          // Use an inactive voice before we reuse active ones
@@ -274,16 +272,39 @@ addEventListener('mousedown', () => {
          const nextVoice = voicePool.toSorted((a, b) => a.activeTime - b.activeTime)[0];
          nextVoice.playFrequency(frequency);
          key.classList.add(PRESSED_CLASS);
-      });
+      }
 
-      addEventListener('keyup', event => {
-         if (event.code !== keyCode) return;
-
+      function stopNote() {
          const activeVoice = voices.find(voice => voice.frequency === frequency);
          if (!activeVoice) return;
 
          activeVoice.stop();
          key.classList.remove(PRESSED_CLASS);
+      }
+
+      addEventListener('keydown', event => {
+         if (event.code !== keyCode || event.repeat) return;
+         playNote();
+      });
+
+      key.addEventListener('pointerdown', event => {
+         event.preventDefault();
+         playNote();
+      });
+
+      addEventListener('keyup', event => {
+         if (event.code !== keyCode) return;
+         stopNote();
+      });
+
+      key.addEventListener('pointerup', event => {
+         event.preventDefault();
+         stopNote();
+      });
+
+      key.addEventListener('pointerleave', event => {
+         event.preventDefault();
+         stopNote();
       });
    }
 }, { once: true });
