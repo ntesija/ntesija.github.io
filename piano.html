@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>The Piano Room</title>
+   <link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
+   <script src="site-footer.js"></script>
+   <style>
+      body {
+         background: #a7ffbe;
+      }
+
+      .piano {
+         display: flex;
+      }
+
+      .key {
+         border: 1px solid black;
+         box-sizing: border-box;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 180px;
+         width: 60px;
+      }
+
+      .white {
+         background: white;
+         color: black;
+      }
+
+      .black {
+         background: black;
+         color: white;
+      }
+
+      .pressed {
+         border: 5px groove sienna;
+      }
+
+      .oscillator-options {
+         gap: 16px;
+      }
+
+      .voices-container {
+         display: flex;
+         margin-left: 16px;
+      }
+
+      .voice-options {
+         align-items: center;
+      }
+
+      .voice-options,
+      .oscillator-options {
+         display: flex;
+         margin-bottom: 16px;
+      }
+
+      .analyzer {
+         border: 1px solid black;
+         height: 100px;
+         width: 216px;
+         margin-bottom: 16px;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>this is the piano room, play the piano</h1>
+
+   <canvas id="oscilloscope" class="analyzer"></canvas>
+
+   <div id="options">
+      <div class="voice-options">
+         <label>
+            Voices:
+            <input data-voices>
+         </label>
+         <div id="voices" class="voices-container"></div>
+      </div>
+      <div class="oscillator-options" id="oscillator-options"></div>
+   </div>
+
+   <div class="piano">
+      <div class="white key" data-freq="261.6256">C</div>
+      <div class="black key" data-freq="277.1826">C#</div>
+      <div class="white key" data-freq="293.6648">D</div>
+      <div class="black key" data-freq="311.1270">D#</div>
+      <div class="white key" data-freq="329.6276">E</div>
+      <div class="white key" data-freq="349.2282">F</div>
+      <div class="black key" data-freq="369.9944">F#</div>
+      <div class="white key" data-freq="391.9954">G</div>
+      <div class="black key" data-freq="415.3047">G#</div>
+      <div class="white key" data-freq="440">A</div>
+      <div class="black key" data-freq="466.1638">A#</div>
+      <div class="white key" data-freq="493.8833">B</div>
+      <div class="white key" data-freq="523.2511">C</div>
+   </div>
+
+   <template id="oscillator">
+      <style>
+         .oscillator-container {
+            border: 1px solid black;
+            display: flex;
+            flex-basis: 200px;
+            flex-direction: column;
+            padding: 8px;
+         }
+      </style>
+      <div class="oscillator-container">
+         <h4 data-oscillator-title></h4>
+         <label>
+            <span data-wave-label></span>
+            <select data-wave-select></select>
+         </label>
+
+         <label>
+            Gain
+            <input type="range" data-gain min="0" max=".5" value=".5" step=".1">
+         </label>
+      </div>
+   </template>
+
+   <template id="voice-indicator">
+      <style>
+         .indicator {
+            background: red;
+            border: 1px solid black;
+            height: 16px;
+            width: 16px;
+         }
+
+         .indicator.on {
+            background: green;
+         }
+
+         .indicator.disabled {
+            background: grey;
+         }
+      </style>
+      <div class="indicator" data-voice-indicator></div>
+   </template>
+
+   <site-footer></site-footer>
+   <script src="piano.js"></script>
+</body>
+
+</html>

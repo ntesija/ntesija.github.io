@@ -8,9 +8,7 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0;
-  font-size: 16px;
   color: #2e2e2e;
-  font-family: 'Roboto', sans-serif;
 }
 
 div {
@@ -69,8 +67,4 @@ a:hover {
   display: flex;
   flex-direction: column;
   flex: 1 1 300px;
-}
-
-.final-thought {
-  max-width: 300px;
 }
