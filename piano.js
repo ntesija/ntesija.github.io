@@ -3,7 +3,7 @@ const MAX_OSCILLATORS = 3;
 const MAIN_GAIN = 1;
 const GAIN_OFF = 0;
 const GAIN_ON = (1 / MAX_OSCILLATORS) ?? 1;
-const DEFAULT_WAVE = 'sawtooth';
+const GAIN_OPTION_INPUT_SCALE = 100;
 const MAX_VOICES = 6;
 const WAVEFORMS = [
    'sawtooth',
@@ -51,11 +51,17 @@ class Voice {
       this.voiceGain = new GainNode(audioCtx, { gain: GAIN_OFF })
       this.voiceGain.connect(masterGain);
 
+      const gainOptions = document.querySelectorAll('[data-gain]');
+      if (gainOptions.length !== MAX_OSCILLATORS) {
+         console.error(`expected ${MAX_OSCILLATORS} gain elements but got ${gainOptions.length}`);
+      }
+
       for (let i = 0; i < MAX_OSCILLATORS; i++) {
-         const oscillatorGain = new GainNode(audioCtx, { gain: GAIN_ON });
+         const gain = gainOptions[i].value / (MAX_OSCILLATORS * GAIN_OPTION_INPUT_SCALE);
+         const oscillatorGain = new GainNode(audioCtx, { gain });
          this.oscillatorGains.push(oscillatorGain);
 
-         const oscillator = new OscillatorNode(audioCtx, { frequency: 0, type: DEFAULT_WAVE });
+         const oscillator = new OscillatorNode(audioCtx, { frequency: 0, type: WAVEFORMS[i] });
          oscillator.connect(oscillatorGain);
          oscillator.start();
          this.oscillators.push(oscillator);
@@ -157,7 +163,7 @@ function createVoiceSelector() {
 }
 
 
-function createOscillatorOption(oscillatorNum) {
+function createOscillatorOption(oscillatorNum, enabled) {
    const template = document.getElementById('oscillator');
    const oscillatorContainer = template.content.cloneNode(true);
 
@@ -167,7 +173,6 @@ function createOscillatorOption(oscillatorNum) {
    const labelEl = oscillatorContainer.querySelector('[data-wave-label]');
    labelEl.textContent = `Waveform`;
    const selectEl = oscillatorContainer.querySelector('[data-wave-select]');
-   selectEl.value = DEFAULT_WAVE;
 
    for (const wave of WAVEFORMS) {
       const option = document.createElement('option');
@@ -175,6 +180,7 @@ function createOscillatorOption(oscillatorNum) {
       option.value = wave;
       selectEl.add(option);
    }
+   selectEl.value = WAVEFORMS[oscillatorNum];
 
    selectEl.addEventListener('change', event => {
       if (!WAVEFORMS.includes(event.target.value)) {
@@ -188,11 +194,10 @@ function createOscillatorOption(oscillatorNum) {
    });
 
    const gainEl = oscillatorContainer.querySelector('[data-gain]');
-   const gainInputScale = 100;
-   gainEl.max = gainInputScale;
-   gainEl.value = gainInputScale;
+   gainEl.max = GAIN_OPTION_INPUT_SCALE;
+   gainEl.value = enabled ? GAIN_OPTION_INPUT_SCALE : 0;
    gainEl.addEventListener('change', event => {
-      const normalizedVolume = event.target.value / (MAX_OSCILLATORS * gainInputScale);
+      const normalizedVolume = event.target.value / (MAX_OSCILLATORS * GAIN_OPTION_INPUT_SCALE);
       for (const voice of voices) {
          voice.setOscillatorGain(normalizedVolume, oscillatorNum);
       }
@@ -312,5 +317,6 @@ addEventListener('mousedown', () => {
 createVoiceSelector();
 
 for (let i = 0; i < MAX_OSCILLATORS; i++) {
-   createOscillatorOption(i);
+   const enabled = i === 0;
+   createOscillatorOption(i, enabled);
 }
