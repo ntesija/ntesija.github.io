@@ -1,6 +1,7 @@
 const linkMap = new Map([
    ['home', 'index.html'],
    ['about', 'about.html'],
+   ['music', 'music.html'],
    ['piano', 'piano.html'],
 ])
 

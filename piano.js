@@ -11,6 +11,10 @@ const WAVEFORMS = [
    'square',
    'triangle',
 ];
+const PLAY_KEY_CODES = [
+   'Enter',
+   'Space',
+];
 
 const keys = document.querySelectorAll('.key');
 const optionsEl = document.getElementById('options');
@@ -265,6 +269,9 @@ addEventListener('mousedown', () => {
 
    instantiateVoices();
 
+   const blocker = document.querySelector('[data-blocker]');
+   blocker.remove();
+
    for (const key of keys) {
       const frequency = Number(key.getAttribute('data-freq')) ?? 0;
       const keyCode = freqToKeyMap.get(frequency) ?? '';
@@ -297,12 +304,24 @@ addEventListener('mousedown', () => {
          playNote();
       });
 
+      key.addEventListener('keydown', event => {
+         if (!PLAY_KEY_CODES.includes(event.code)) return;
+         event.preventDefault();
+         playNote();
+      });
+
       addEventListener('keyup', event => {
          if (event.code !== keyCode) return;
          stopNote();
       });
 
       key.addEventListener('pointerup', event => {
+         event.preventDefault();
+         stopNote();
+      });
+
+      key.addEventListener('keyup', event => {
+         if (!PLAY_KEY_CODES.includes(event.code)) return;
          event.preventDefault();
          stopNote();
       });

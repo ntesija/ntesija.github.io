@@ -4,11 +4,6 @@
 
 body {
   background-color: #ffe48c;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 0;
-  color: #2e2e2e;
 }
 
 div {
@@ -36,10 +31,6 @@ a:hover {
 
 .header {
   display: flex;
-}
-
-.icon-container {
-  height: 50px;
 }
 
 .icon-container a {

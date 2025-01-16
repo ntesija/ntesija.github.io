@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>The Piano Room</title>
+   <title>piano</title>
    <link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
    <script src="site-footer.js"></script>
    <style>
@@ -66,6 +66,22 @@
          width: 216px;
          margin-bottom: 16px;
       }
+
+      .piano-container {
+         position: relative;
+      }
+
+      .blocker {
+         align-items: center;
+         background-color: #dadce0dd;
+         display: flex;
+         justify-content: center;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+      }
    </style>
 </head>
 
@@ -73,33 +89,40 @@
    <h1>this is the piano room, play the piano</h1>
    <p>Use your keyboard to play (asdfghjk are white keys) or click on some keys</p>
 
-   <canvas id="oscilloscope" class="analyzer"></canvas>
-
-   <div id="options">
-      <div class="voice-options">
-         <label>
-            Voices:
-            <input data-voices>
-         </label>
-         <div id="voices" class="voices-container"></div>
+   <div class="piano-container">
+      <div class="blocker" data-blocker>
+         <button>
+            <h2>turn on the piano</h2>
+         </button>
       </div>
-      <div class="oscillator-options" id="oscillator-options"></div>
-   </div>
+      <canvas id="oscilloscope" class="analyzer"></canvas>
 
-   <div class="piano">
-      <div class="white key" data-freq="261.6256">C</div>
-      <div class="black key" data-freq="277.1826">C#</div>
-      <div class="white key" data-freq="293.6648">D</div>
-      <div class="black key" data-freq="311.1270">D#</div>
-      <div class="white key" data-freq="329.6276">E</div>
-      <div class="white key" data-freq="349.2282">F</div>
-      <div class="black key" data-freq="369.9944">F#</div>
-      <div class="white key" data-freq="391.9954">G</div>
-      <div class="black key" data-freq="415.3047">G#</div>
-      <div class="white key" data-freq="440">A</div>
-      <div class="black key" data-freq="466.1638">A#</div>
-      <div class="white key" data-freq="493.8833">B</div>
-      <div class="white key" data-freq="523.2511">C</div>
+      <div id="options">
+         <div class="voice-options">
+            <label>
+               Voices:
+               <input data-voices>
+            </label>
+            <div id="voices" class="voices-container"></div>
+         </div>
+         <div class="oscillator-options" id="oscillator-options"></div>
+      </div>
+
+      <div class="piano">
+         <div class="white key" data-freq="261.6256" role="button" tabindex="0">C</div>
+         <div class="black key" data-freq="277.1826" role="button" tabindex="0">C#</div>
+         <div class="white key" data-freq="293.6648" role="button" tabindex="0">D</div>
+         <div class="black key" data-freq="311.1270" role="button" tabindex="0">D#</div>
+         <div class="white key" data-freq="329.6276" role="button" tabindex="0">E</div>
+         <div class="white key" data-freq="349.2282" role="button" tabindex="0">F</div>
+         <div class="black key" data-freq="369.9944" role="button" tabindex="0">F#</div>
+         <div class="white key" data-freq="391.9954" role="button" tabindex="0">G</div>
+         <div class="black key" data-freq="415.3047" role="button" tabindex="0">G#</div>
+         <div class="white key" data-freq="440" role="button" tabindex="0">A</div>
+         <div class="black key" data-freq="466.1638" role="button" tabindex="0">A#</div>
+         <div class="white key" data-freq="493.8833" role="button" tabindex="0">B</div>
+         <div class="white key" data-freq="523.2511" role="button" tabindex="0">C</div>
+      </div>
    </div>
 
    <template id="oscillator">
