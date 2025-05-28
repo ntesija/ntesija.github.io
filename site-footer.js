@@ -3,6 +3,7 @@ const linkMap = new Map([
    ['about', 'about.html'],
    ['music', 'music.html'],
    ['piano', 'piano.html'],
+   ['websites', 'websites.html'],
 ])
 
 class SiteFooter extends HTMLElement {
