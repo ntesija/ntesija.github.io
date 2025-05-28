@@ -53,9 +53,6 @@ class SiteFooter extends HTMLElement {
             
          footer {
             font-size: 24px;
-            position: fixed;
-            bottom: 8px;
-            left: 8px;
          }`;
       return style;
    }
