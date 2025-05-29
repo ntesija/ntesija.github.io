@@ -25,7 +25,7 @@ class SiteFooter extends HTMLElement {
          linkTemplate.href = link;
          linkTemplate.textContent = title;
 
-         if (link === this.getCurrentLocation()) {
+         if (link.includes(this.getCurrentLocation())) {
             linkTableCell.classList.add('active')
          }
 
