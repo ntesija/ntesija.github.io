@@ -18,6 +18,7 @@ class SiteFooter extends HTMLElement {
    createLinkTable() {
       const linkTable = document.createElement('table');
       const linkTableRow = document.createElement('tr');
+      const currentLocation = this.getCurrentLocation();
       linkTable.appendChild(linkTableRow);
       for (const [title, link] of linkMap.entries()) {
          const linkTableCell = document.createElement('td');
@@ -25,7 +26,7 @@ class SiteFooter extends HTMLElement {
          linkTemplate.href = link;
          linkTemplate.textContent = title;
 
-         if (link.includes(this.getCurrentLocation())) {
+         if (link.includes((currentLocation === '' ? 'index' : currentLocation))) {
             linkTableCell.classList.add('active')
          }
 
