@@ -1,9 +1,10 @@
 const linkMap = new Map([
    ['home', 'index.html'],
    ['about', 'about.html'],
+   ['websites', 'websites.html'],
+   ['videos', 'videos.html'],
    ['music', 'music.html'],
    ['piano', 'piano.html'],
-   ['websites', 'websites.html'],
 ])
 
 class SiteFooter extends HTMLElement {
@@ -16,12 +17,13 @@ class SiteFooter extends HTMLElement {
    }
 
    createLinkTable() {
-      const linkTable = document.createElement('table');
-      const linkTableRow = document.createElement('tr');
+      const linkTable = document.createElement('div');
+      linkTable.classList.add('table');
       const currentLocation = this.getCurrentLocation();
-      linkTable.appendChild(linkTableRow);
       for (const [title, link] of linkMap.entries()) {
-         const linkTableCell = document.createElement('td');
+         const linkTableCell = document.createElement('div');
+         linkTableCell.classList.add('cell');
+
          const linkTemplate = document.createElement('a');
          linkTemplate.href = link;
          linkTemplate.textContent = title;
@@ -31,7 +33,7 @@ class SiteFooter extends HTMLElement {
          }
 
          linkTableCell.appendChild(linkTemplate);
-         linkTableRow.appendChild(linkTableCell);
+         linkTable.appendChild(linkTableCell);
       }
 
       return linkTable;
@@ -40,16 +42,28 @@ class SiteFooter extends HTMLElement {
    createStyle() {
       const style = document.createElement('style');
       style.textContent = `
-         table, tr, td {
+         div {
             border: 1px solid black;
          }
 
-         td.active {
+         .table {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1px;
+            width: fit-content;
+         }
+
+         .cell {
+            padding: 1px;
+            margin: 1px;
+         }
+
+         .cell.active {
             background: #ffffffc0;
             border-style: dashed;
          }
 
-         td.active a {
+         .cell.active a {
             color: black;
          }
             
