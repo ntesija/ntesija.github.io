@@ -12,7 +12,7 @@ class SiteFooter extends HTMLElement {
    }
 
    getCurrentLocation() {
-      return document.location.href.split('/')?.reverse()?.[0] ?? '';
+      return document.location.href.split('/')?.reverse()?.[0] ?? 'index';
    }
 
    createLinkTable() {
