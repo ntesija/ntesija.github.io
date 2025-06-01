@@ -11,6 +11,16 @@
       body {
          background: #de8a8a;
       }
+
+      .container {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 8px;
+      }
+
+      .section {
+         flex: 0 1 300px;
+      }
    </style>
 </head>
 
@@ -23,38 +33,46 @@
       I often walk around with my hi8 video camera and film random things. I try to capture the essence of
       old family videos.
    </p>
+   <div class="container">
+      <div class="section">
+         <h2>Sonder</h2>
+         <iframe width="300" src="https://www.youtube.com/embed/z-lqdYqVWfw?si=CyITJ4zn0yeSa6xt"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <p>
+            I made a movie called Sonder. It follows 8 people through San Francisco as they film parts
+            of their day. It arose from me wanting to see what other people were doing with their days
+            as I was feeling like I was not doing enough. It was really uplifting to see that everyone
+            else was doing just about the same things I was doing too.
+         </p>
+      </div>
 
-   <h2>Sonder</h2>
-   <iframe width="300" src="https://www.youtube.com/embed/z-lqdYqVWfw?si=CyITJ4zn0yeSa6xt" title="YouTube video player"
-      frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   <p>
-      I made a movie called Sonder. It follows 8 people through San Francisco as they film parts
-      of their day. It arose from me wanting to see what other people were doing with their days
-      as I was feeling like I was not doing enough. It was really uplifting to see that everyone
-      else was doing just about the same things I was doing too.
-   </p>
+      <div class="section">
+         <h2>A trip to Bristol</h2>
+         <iframe width="300" src="https://www.youtube.com/embed/Oy_Cs-1m_GA?si=Z303Am6Ql-HwPU3l"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <p>
+            This is a video of a trip I took to Bristol. I have moved to London and am enjoying exploring
+            the surrounding countries. I added some very simple music over top of the video because it felt
+            like it needed some ambient music.
+         </p>
+      </div>
 
-   <h2>A trip to Bristol</h2>
-   <iframe width="300" src="https://www.youtube.com/embed/Oy_Cs-1m_GA?si=Z303Am6Ql-HwPU3l" title="YouTube video player"
-      frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   <p>
-      This is a video of a trip I took to Bristol. I have moved to London and am enjoying exploring
-      the surrounding countries. I added some very simple music over top of the video because it felt
-      like it needed some ambient music.
-   </p>
-
-   <h2>other videos</h2>
-   <video controls width="300">
-      <source src="images/hi8.mp4" type="video/mp4" />
-   </video>
-   <p>
-      This is a video I took of random things including me and the streets of San Francisco. I
-      have a
-      lot of videos like this because I often get bored and wander around the city.
-   </p>
-
+      <div class="section">
+         <h2>other videos</h2>
+         <video controls width="300">
+            <source src="images/hi8.mp4" type="video/mp4" />
+         </video>
+         <p>
+            This is a video I took of random things including me and the streets of San Francisco. I
+            have a
+            lot of videos like this because I often get bored and wander around the city.
+         </p>
+      </div>
+   </div>
    <site-footer></site-footer>
 </body>
 
