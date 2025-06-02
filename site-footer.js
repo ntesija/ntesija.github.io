@@ -1,9 +1,12 @@
 const linkMap = new Map([
    ['home', 'index.html'],
-   ['about', 'about.html'],
+   ['websites', 'websites.html'],
+   ['stone sculptures', 'stone-sculptures.html'],
+   ['videos', 'videos.html'],
    ['music', 'music.html'],
    ['piano', 'piano.html'],
-   ['websites', 'websites.html'],
+   ['friends', 'friends.html'],
+   ['about', 'about.html'],
 ])
 
 class SiteFooter extends HTMLElement {
@@ -12,25 +15,27 @@ class SiteFooter extends HTMLElement {
    }
 
    getCurrentLocation() {
-      return document.location.href.split('/')?.reverse()?.[0] ?? '';
+      return document.location.href.split('/')?.reverse()?.[0] ?? 'index';
    }
 
    createLinkTable() {
-      const linkTable = document.createElement('table');
-      const linkTableRow = document.createElement('tr');
-      linkTable.appendChild(linkTableRow);
+      const linkTable = document.createElement('div');
+      linkTable.classList.add('table');
+      const currentLocation = this.getCurrentLocation();
       for (const [title, link] of linkMap.entries()) {
-         const linkTableCell = document.createElement('td');
+         const linkTableCell = document.createElement('div');
+         linkTableCell.classList.add('cell');
+
          const linkTemplate = document.createElement('a');
          linkTemplate.href = link;
          linkTemplate.textContent = title;
 
-         if (link === this.getCurrentLocation()) {
+         if (link.includes((currentLocation === '' ? 'index' : currentLocation))) {
             linkTableCell.classList.add('active')
          }
 
          linkTableCell.appendChild(linkTemplate);
-         linkTableRow.appendChild(linkTableCell);
+         linkTable.appendChild(linkTableCell);
       }
 
       return linkTable;
@@ -39,16 +44,28 @@ class SiteFooter extends HTMLElement {
    createStyle() {
       const style = document.createElement('style');
       style.textContent = `
-         table, tr, td {
+         div {
             border: 1px solid black;
          }
 
-         td.active {
+         .table {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1px;
+            width: fit-content;
+         }
+
+         .cell {
+            padding: 1px;
+            margin: 1px;
+         }
+
+         .cell.active {
             background: #ffffffc0;
             border-style: dashed;
          }
 
-         td.active a {
+         .cell.active a {
             color: black;
          }
             
