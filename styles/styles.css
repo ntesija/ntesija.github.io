@@ -3,7 +3,10 @@
 }
 
 body {
+  background: url("../background-textures/Elements_03-256x256.png");
   background-color: #ffe48c;
+  background-blend-mode: overlay;
+
 }
 
 div {
@@ -39,7 +42,7 @@ a:hover {
 
 .box-thing {
   background-color: #ffffff1c;
-  border: 1px solid #242222;
+  border: 2px inset #242222;
   padding: 0 var(--space);
   max-width: 800px;
 }

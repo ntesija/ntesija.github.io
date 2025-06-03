@@ -45,7 +45,7 @@ class SiteFooter extends HTMLElement {
       const style = document.createElement('style');
       style.textContent = `
          div {
-            border: 1px solid black;
+            border: 2px outset black;
          }
 
          .table {
