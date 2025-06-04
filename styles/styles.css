@@ -5,7 +5,7 @@
 body {
   background-color: #ffe48c;
   background-blend-mode: overlay;
-
+  height: 100vh;
 }
 
 div {
