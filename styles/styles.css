@@ -61,3 +61,11 @@ a:hover {
   flex-direction: column;
   flex: 1 1 300px;
 }
+
+.website-box {
+  background-color: #ffb2fb; 
+  border: 4px inset #ff00f2;
+  font-size: large;
+  font-weight: bold;
+  width: fit-content;
+}
