@@ -25,6 +25,13 @@
       .section {
          flex: 0 1 300px;
       }
+
+      .section .text-area,
+      .intro {
+         background-color: #fffac5;
+         padding: 2px;
+         width: fit-content;
+      }
    </style>
 </head>
 
@@ -33,7 +40,7 @@
 
    <h1>videos</h1>
 
-   <p>
+   <p class="intro">
       I often walk around with my hi8 video camera and film random things. I try to capture the essence of
       old family videos.
    </p>
@@ -44,12 +51,14 @@
             title="YouTube video player" frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         <p>
-            I made a movie called Sonder. It follows 8 people through San Francisco as they film parts
-            of their day. It arose from me wanting to see what other people were doing with their days
-            as I was feeling like I was not doing enough. It was really uplifting to see that everyone
-            else was doing just about the same things I was doing too.
-         </p>
+         <div class="text-area">
+            <p>
+               I made a movie called Sonder. It follows 8 people through San Francisco as they film parts
+               of their day. It arose from me wanting to see what other people were doing with their days
+               as I was feeling like I was not doing enough. It was really uplifting to see that everyone
+               else was doing just about the same things I was doing too.
+            </p>
+         </div>
       </div>
 
       <div class="section">
@@ -58,11 +67,13 @@
             title="YouTube video player" frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         <p>
-            This is a video of a trip I took to Bristol. I have moved to London and am enjoying exploring
-            the surrounding countries. I added some very simple music over top of the video because it felt
-            like it needed some ambient music.
-         </p>
+         <div class="text-area">
+            <p>
+               This is a video of a trip I took to Bristol. I have moved to London and am enjoying exploring
+               the surrounding countries. I added some very simple music over top of the video because it felt
+               like it needed some ambient music.
+            </p>
+         </div>
       </div>
 
       <div class="section">
@@ -70,11 +81,13 @@
          <video controls width="300">
             <source src="images/hi8.mp4" type="video/mp4" />
          </video>
-         <p>
-            This is a video I took of random things including me and the streets of San Francisco. I
-            have a
-            lot of videos like this because I often get bored and wander around the city.
-         </p>
+         <div class="text-area">
+            <p>
+               This is a video I took of random things including me and the streets of San Francisco. I
+               have a
+               lot of videos like this because I often get bored and wander around the city.
+            </p>
+         </div>
       </div>
    </div>
    <site-footer></site-footer>
