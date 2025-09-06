@@ -17,10 +17,10 @@ span {
 }
 
 a {
-  text-decoration: none;
-  font-size: 18px;
   color: revert;
   cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 a:hover {
@@ -41,8 +41,9 @@ a:hover {
 
 .box-thing {
   background-color: #ffffff1c;
-  border: 2px inset #242222;
-  padding: 0 var(--space);
+  border: 4px double #242222;
+  padding: 0 var(--space) var(--space);
+  margin-bottom: var(--space);
   max-width: 800px;
 }
 
@@ -52,10 +53,6 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.text {
-  margin-bottom: var(--space);
-}
-
 .multi {
   display: flex;
   flex-direction: column;
@@ -63,8 +60,9 @@ a:hover {
 }
 
 .website-box {
-  background-color: #ffb2fb; 
-  border: 4px inset #ff00f2;
+  border: 4px double #9200ff;
+  padding: 4px 24px;
+  margin: 4px 0;
   font-size: large;
   font-weight: bold;
   width: fit-content;

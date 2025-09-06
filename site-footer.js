@@ -44,10 +44,6 @@ class SiteFooter extends HTMLElement {
    createStyle() {
       const style = document.createElement('style');
       style.textContent = `
-         div {
-            border: 2px outset black;
-         }
-
          .table {
             display: flex;
             flex-wrap: wrap;
@@ -56,13 +52,14 @@ class SiteFooter extends HTMLElement {
          }
 
          .cell {
+            border: 4px outset transparent;
             padding: 1px;
             margin: 1px;
          }
 
          .cell.active {
             background: #ffffffc0;
-            border-style: dashed;
+            border: 4px dotted black;
          }
 
          .cell.active a {
