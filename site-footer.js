@@ -1,10 +1,11 @@
 const linkMap = new Map([
    ['home', 'index.html'],
+   ['my game', 'my-game.html'],
    ['stone sculptures', 'stone-sculptures.html'],
-   ['websites', 'websites.html'],
+   ['piano', 'piano.html'],
    ['videos', 'videos.html'],
    ['music', 'music.html'],
-   ['piano', 'piano.html'],
+   ['websites', 'websites.html'],
    ['friends', 'friends.html'],
    ['about', 'about.html'],
 ])
