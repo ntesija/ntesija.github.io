@@ -12,6 +12,7 @@ body {
   background-position: var(--bg-pos);
   background-repeat: repeat;
   background-size: calc(100vw / 3);
+  margin: 0;
 }
 
 div {
@@ -40,9 +41,9 @@ h2 {
 .banner-text {
   color: var(--color-yellow);
   font-size: 32px;
-  text-align: center;
   text-shadow: -4px -4px 0px var(--color-pink), -8px -8px 0px var(--color-red);
   vertical-align: middle;
+  width: fit-content;
 }
 
 .checkbox-label {
@@ -53,9 +54,14 @@ h2 {
   display: flex;
 }
 
+.icon-container {
+  padding: 4px 0;
+}
+
 .icon-container a {
   background-color: var(--color-yellow);
   margin-right: var(--space);
+  padding: 2px;
 }
 
 .box-thing {
@@ -63,11 +69,14 @@ h2 {
   border: 4px double #242222;
   padding: 0 var(--space) var(--space);
   margin-bottom: var(--space);
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .footer-container {
   background: var(--color-yellow);
+  flex: 1 0 auto;
+  padding: 8px;
+  width: 100%;
 }
 
 .row {
@@ -89,4 +98,22 @@ h2 {
   font-size: large;
   font-weight: bold;
   width: fit-content;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.left-side {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.right-side {
+  flex: 1 1 auto;
+  height: 100%;
+  overflow: auto;
 }
