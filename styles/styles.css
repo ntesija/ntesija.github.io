@@ -1,11 +1,17 @@
 :root {
   --space: 16px;
+  --color-pink: #e496b5;
+  --color-red: #ed1c25;
+  --color-yellow: #ffe48c;
 }
 
 body {
-  background-color: #ffe48c;
-  background-blend-mode: overlay;
-  height: 100vh;
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url("../background-textures/star-background.jpg");
+  background-position: var(--bg-pos);
+  background-repeat: repeat;
+  background-size: calc(100vw / 3);
 }
 
 div {
@@ -27,6 +33,18 @@ a:hover {
   text-decoration: none;
 }
 
+h2 {
+  color: white;
+}
+
+.banner-text {
+  color: var(--color-yellow);
+  font-size: 32px;
+  text-align: center;
+  text-shadow: -4px -4px 0px var(--color-pink), -8px -8px 0px var(--color-red);
+  vertical-align: middle;
+}
+
 .checkbox-label {
   cursor: pointer;
 }
@@ -36,15 +54,20 @@ a:hover {
 }
 
 .icon-container a {
+  background-color: var(--color-yellow);
   margin-right: var(--space);
 }
 
 .box-thing {
-  background-color: #ffffff1c;
+  background-color: var(--color-yellow);
   border: 4px double #242222;
   padding: 0 var(--space) var(--space);
   margin-bottom: var(--space);
   max-width: 800px;
+}
+
+.footer-container {
+  background: var(--color-yellow);
 }
 
 .row {
