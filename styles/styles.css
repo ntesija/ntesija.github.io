@@ -74,9 +74,8 @@ h2 {
 
 .footer-container {
   background: var(--color-yellow);
-  flex: 1 0 auto;
   padding: 8px;
-  width: 100%;
+  grid-area: header;
 }
 
 .row {
@@ -91,29 +90,37 @@ h2 {
   flex: 1 1 300px;
 }
 
-.website-box {
-  border: 4px double #9200ff;
-  padding: 4px 24px;
-  margin: 4px 0;
-  font-size: large;
-  font-weight: bold;
-  width: fit-content;
-}
-
 .page {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "header header"
+      "left right";
   height: 100vh;
+  width: 100%;
   justify-content: space-between;
 }
 
+@media (max-width: 600px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "left"
+      "right";
+  }
+
+  .banner-text {
+    font-size: 28px;
+  }
+}
+
 .left-side {
-  flex: 1 1 auto;
-  overflow: auto;
+  grid-area: left;
 }
 
 .right-side {
-  flex: 1 1 auto;
-  height: 100%;
   overflow: auto;
+  grid-area: right;
 }
