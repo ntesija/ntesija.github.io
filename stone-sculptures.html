@@ -18,17 +18,43 @@
 
       .container {
          display: flex;
-         flex-wrap: wrap;
+         flex-direction: column;
          gap: 8px;
          margin-bottom: 8px;
       }
 
       .section {
-         flex: 0 1 300px;
+         display: flex;
+         gap: 8px;
       }
 
-      .section img {
+      .section .text-area {
+         display: flex;
+         flex: 0 1 300px;
+         flex-direction: column;
+         height: 246px;
+         overflow: hidden;
+      }
+
+      .text-area * {
+         margin: 0;
+      }
+
+      .text-area h3 {
+         font-size: 1em;
+         margin-bottom: 8px;
+      }
+
+      .text-area p {
+         overflow: auto;
+      }
+
+      .section .image-container {
          border: 6px double black;
+         display: flex;
+         flex: 1 0 300px;
+         gap: 8px;
+         overflow: auto;
       }
 
       .section .text-area,
@@ -39,99 +65,287 @@
          width: fit-content;
       }
 
-      h3 {
-         font-size: 1em;
+
+      @media (max-width: 600px) {
+         body {
+            margin: 0;
+         }
+
+         .body-container {
+            margin: 8px 8px 0;
+         }
+
+         .section {
+            overflow: auto;
+            padding: 0px 8px;
+         }
+
+         .section .text-area {
+            flex: 1 0 300px;
+         }
+
+         .section .image-container {
+            overflow: visible;
+         }
       }
    </style>
 </head>
 
 <body>
-   <site-footer></site-footer>
+   <div class="body-container">
+      <site-footer></site-footer>
 
-   <h1>stone sculptures</h1>
+      <h1>stone sculptures</h1>
 
-   <p class="intro">
-      I have begun sculpting stone. I currently have a few pieces that I've completed and some in progress.
-   </p>
+      <p class="intro">
+         Here are my stone sculptures I've created. I currently have a few pieces that I've completed and some in
+         progress.
+         I don't use
+         any power tools so everything is done painstakingly by hand. I use a mallet and a few chisels to rough out the
+         shape then I use rasps and files to smooth out the details. From there I sand using silicon carbide sandpaper
+         to
+         get a smooth glossy finish. Generally the sanding takes the longest, sometimes up to a whole month of studio
+         time.
+      </p>
+
+   </div>
 
    <div class="container">
 
       <div class="section">
-         <h2>006 - green abstract marble</h2>
-         <img width="300px" src="images/green-marble.jpg"
-            alt="a sculpture depicting abstract shapes"></img>
          <div class="text-area">
-            <h3>November 2025</h3>
+            <h2>007 - hand</h2>
+            <h3>WIP</h3>
             <p>
-               this abstract piece is made from marble. it features many curves that look similar to different body parts from every angle. i'm starting to notice that hands are appearing in my art more than genitalia
+               I'm trying something new with this piece. I want to see if I can save time and sanity by doing as much as
+               possible with the chisels instead of rasping/sanding for a super long time. I think it's a bit easier on
+               this piece beacuse it's not marble (I <i>think</i> its limestone) which means it takes less force to
+               carve it. Anyways I'm quite happy with this piece so far, hands are quite difficult in most art forms,
+               stone is no different.
             </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/hand/hand-08.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-07.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-06.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-05.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-04.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-03.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-01.jpg" alt="a sculpture depicting a hand"></img>
+            <img width="300px" height="250px" src="images/hand/hand-02.jpg" alt="a sculpture depicting a hand"></img>
          </div>
       </div>
 
       <div class="section">
-         <h2>005 - migraine</h2>
-         <img width="300px" src="images/migraine.jpg"
-            alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
          <div class="text-area">
+            <h2>006 - green abstract marble</h2>
+            <h3>November 2025</h3>
+            <p>
+               this abstract piece is made from marble. it features many curves that look similar to different body
+               parts from every angle. i'm starting to notice that hands are appearing in my art more than genitalia
+            </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/green-marble/green-marble-13.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-11.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-12.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-10.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-09.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-08.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-07.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-06.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-05.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-04.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-03.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-02.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+            <img width="300px" height="250px" src="images/green-marble/green-marble-01.jpg"
+               alt="a sculpture depicting abstract shapes"></img>
+         </div>
+      </div>
+
+      <div class="section">
+         <div class="text-area">
+            <h2>005 - migraine</h2>
             <h3>June 2025</h3>
             <p>
                this is my biggest piece yet. I started this piece without knowing where I was going. I BELIEVE this is
                limestone, but it might be alabaster.
                I have to do some tests on the stone to figure out what it is because I don't really recall what type of
                stone I bought. this is also the first piece that doesn't depict genitalia
+
+               I started this piece in San Francisco and then finished it after moving to London.
             </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/migraine/migraine-13.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-12.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-11.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-10.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-09.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-08.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-07.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-06.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-05.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-04.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-03.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-02.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
+            <img width="300px" height="250px" src="images/migraine/migraine-01.jpg"
+               alt="a sculpture depicting a head being held by a hand with brains oozing out of it"></img>
          </div>
       </div>
 
       <div class="section">
-         <h2>004 - alabaster love 2</h2>
-         <img width="300px" src="images/alabaster-kur.jpg"
-            alt="a sculpture made from alabaster featuring an erect penis"></img>
          <div class="text-area">
+            <h2>004 - alabaster love 2</h2>
             <h3>September 2024</h3>
             <p>
                this one is uh... probably my best work but also the one I don't like to show people? it's made from the
-               same alabaster as the second piece and they kinda fit together. it's hidden in my flat
+               same alabaster as the second piece and they kinda fit together. a lot of the work on this was done with
+               rasps and sand paper as it was too small and fragile to hit with a chisel.
             </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-09.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-08.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-07.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-06.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-05.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-04.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-03.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-02.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
+            <img width="300px" height="250px" src="images/alabaster-kur/alabaster-kur-01.jpg"
+               alt="a sculpture made from alabaster featuring an erect penis"></img>
          </div>
       </div>
 
       <div class="section">
-         <h2>003 - relaxed nude</h2>
-         <img width="300px" src="images/other_marble.jpg"
-            alt="a sculpture made from marble showing a nude male figure"></img>
          <div class="text-area">
+            <h2>003 - relaxed nude</h2>
             <h3>June 2024</h3>
             <p>
                the third piece I made is a larger marble sculpture. I was still learning about bruising stone with
-               chisels
-               and this one has very clear signs in the tight areas. this one lives in my flat
+               chisels and this one has very clear signs in the tight areas.
+
+               the idea for this piece was derived from the form
+               of the original stone when I bought it. I couldn't unsee the large triangular part on the original stone
+               as being what it ended up being so the form of the stone dictated the sculpture.
             </p>
          </div>
-      </div>
-      
-      <div class="section">
-         <h2>002 - alabaster love</h2>
-         <img width="300px" src="images/alabaster-guz.jpg"
-            alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
-         <div class="text-area">
-            <h3>January 2024</h3>
-            <p>
-               my second piece was made out of alabaster. alabaster is really soft and I learned a lot about how easy it
-               is to bruise stone with chisels. this one is in my flat. i finished this one before I finished the first piece
-            </p>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-12.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-11.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-10.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-09.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-08.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-07.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-06.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-05.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-04.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-03.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-02.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
+            <img width="300px" height="250px" src="images/relaxed-nude/relaxed-nude-01.jpg"
+               alt="a sculpture made from marble showing a nude male figure"></img>
          </div>
       </div>
 
       <div class="section">
-         <h2>001 - abstract marble</h2>
-         <img width="300px" src="images/marble.jpg" alt="an abstract sculpture made from marble"></img>
          <div class="text-area">
+            <h2>002 - alabaster love</h2>
+            <h3>January 2024</h3>
+            <p>
+               my second piece was made out of alabaster. alabaster is really soft and I learned a lot about how easy it
+               is to bruise stone with chisels. i actually finished this one before I finished the first piece as it was
+               easier to work with alabaster than it was to work with marble. this piece broke a few times which taught
+               me that with stone, if it breaks, you just get two sculptures instead of one.
+            </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-07.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-06.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-05.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-04.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-03.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-02.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+            <img width="300px" height="250px" src="images/alabaster-guz/alabaster-guz-01.jpg"
+               alt="an abstract sculpture made from alabaster. it resembles a heart and a butt"></img>
+         </div>
+      </div>
+
+      <div class="section">
+         <div class="text-area">
+            <h2>001 - abstract marble</h2>
             <h3>May 2024</h3>
             <p>
-               this was my first piece I made. I learned a lot about working with smaller pieces, filing stone down, and
-               sanding. it now resides somewhere in my parent's house
+               this was the first piece I made. I learned a lot about working with smaller pieces, filing stone down,
+               and
+               sanding. this was a piece of scrap marble that was available at the studio I took classes at. I almost
+               didn't add the hole in the middle of the sculpture because I figured it would break in half. After a
+               while I realized that the sculpture would be incomplete without it so I did it anyways and it did not
+               break. Marble is very tough
             </p>
+         </div>
+         <div class="image-container">
+            <img width="300px" height="250px" src="images/first-piece/first-piece-06.jpg"
+               alt="an abstract sculpture made from marble"></img>
+            <img width="300px" height="250px" src="images/first-piece/first-piece-05.jpg"
+               alt="an abstract sculpture made from marble"></img>
+            <img width="300px" height="250px" src="images/first-piece/first-piece-04.jpg"
+               alt="an abstract sculpture made from marble"></img>
+            <img width="300px" height="250px" src="images/first-piece/first-piece-03.jpg"
+               alt="an abstract sculpture made from marble"></img>
+            <img width="300px" height="250px" src="images/first-piece/first-piece-02.jpg"
+               alt="an abstract sculpture made from marble"></img>
+            <img width="300px" height="250px" src="images/first-piece/first-piece-01.jpg"
+               alt="an abstract sculpture made from marble"></img>
          </div>
       </div>
 
