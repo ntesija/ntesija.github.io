@@ -1,126 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>nik tesija</title>
-    <meta name="description" content="Nik Tesija's personal website with all the stuff he's made">
-    <script src="site-footer.js"></script>
-    <link type="text/css" rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
+    <link rel="preload" href="background-textures/background.png" as="image" />
+    <script src="site-footer.js"></script>
+    <style>
+        body {
+            background-image: url("background-textures/background.png");
+            margin: 0;
+        }
+
+        .nav-button-container {
+            display: grid;
+            gap: 8px;
+            grid: repeat(3, 128px) / repeat(4, 256px);
+            justify-content: center;
+            margin-top: 64px;
+            margin-bottom: 140px;
+        }
+
+        .nav-button {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid #aaa;
+            border-radius: 10% / 15%;
+            position: relative;
+        }
+
+        .no-content {
+            animation: scroll-background 4s infinite linear;
+            background-image: url("background-textures/static.png"), url("background-textures/background.png");
+            background-repeat: round;
+            background-size: unset;
+            background-position: unset;
+        }
+
+        .no-content-text {
+            align-content: center;
+            font-size: 40px;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            color: #74747429;
+            font-weight: bold;
+        }
+
+        .friends-button {
+            background-image: url("background-textures/friends.webp");
+            background-color: #d5ffd5;
+        }
+
+        .stone-button {
+            background-image: url("background-textures/stone.webp");
+        }
+
+        .shrinko-button {
+            background-image: url("images/shrinko/shrinkoTitle.webp");
+            background-color: #add3ff;
+            background-size: contain;
+        }
+
+        .videos-button {
+            background-image: url("background-textures/videos.webp");
+            background-color: #ffdfee;
+        }
+
+        .piano-button {
+            background-image: url("background-textures/piano.webp");
+        }
+
+        .about-button {
+            background-image: url("images/portrait.png"), url("background-textures/star-background.jpg");
+        }
+
+        .music-button {
+            background-image: url("background-textures/music.webp");
+        }
+
+        .web-button {
+            background-image: url("background-textures/websites.webp");
+        }
+
+        .border-animation {
+            animation: fade-out .75s forwards;
+            border: 4px solid #5cb9d9aa;
+            box-shadow: 0 0 10px #5cb9d9;
+            border-radius: 10% / 15%;
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            bottom: -4px;
+            right: -4px;
+            transition: opacity .75s;
+            opacity: 0;
+        }
+
+        .nav-button:hover .border-animation {
+            animation: fade-in .5s forwards;
+            opacity: 1;
+        }
+
+        .nav-content {
+            padding: 8px;
+        }
+
+        .hover-text {
+            background: #eaeaea;
+            border: 2px solid #aaa;
+            border-radius: 64px;
+            box-shadow: 2px 2px 10px #aaa;
+            bottom: -76px;
+            left: -17px;
+            right: -17px;
+            height: 64px;
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .hover-text-content {
+            align-content: center;
+            color: initial;
+            font-size: 26px;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nav-button:hover .hover-text {
+            animation: hover-text-in .2s ease-in-out .25s forwards;
+            opacity: 1;
+            transition: opacity .25s ease-in-out .25s;
+        }
+
+        .footer {
+            background: linear-gradient(#aaa, #eaeaea 50%);
+            border-top: 4px solid #5cb9d9;
+            box-shadow: 0 -1px 3px #5cb9d9;
+            bottom: 0;
+            position: fixed;
+            height: 128px;
+            width: 100%;
+        }
+
+        .footer-name {
+            color: #666;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 16px;
+            text-align: center;
+            width: 100%;
+        }
+
+        @keyframes scroll-background {
+            from {
+                background-position-y: 99%;
+            }
+
+            to {
+                background-position-y: 0%;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                left: 0;
+                right: 0;
+            }
+
+            to {
+                left: -4px;
+                right: -4px;
+            }
+        }
+
+        @keyframes fade-out {
+            from {
+                left: -4px;
+                right: -4px;
+            }
+
+            to {
+                left: 10px;
+                right: 10px;
+            }
+        }
+
+        @keyframes hover-text-in {
+            from {
+                left: 0;
+                right: 0;
+                height: 58px;
+            }
+
+            to {
+                left: -17px;
+                right: -17px;
+                height: 64px;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .nav-button-container {
+                grid: repeat(4, 128px) / repeat(3, 256px);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .nav-button-container {
+                grid: repeat(6, 128px) / repeat(2, 256px);
+            }
+
+            .footer {
+                height: 64px;
+            }
+
+            .footer-name {
+                margin-top: 8px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+            .nav-button-container {
+                grid: repeat(12, 128px) / repeat(1, 256px);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <div class="page">
-            <div class="footer-container">
-                <site-footer></site-footer>
-            </div>
-            <div class="left-side">
-                <div class="banner-text" id="banner-text">
-                    <h1>nik tesija</h1>
-                </div>
-                <img height="200px" src="images/portrait.png">
-                <div class="header-text">
-                    <div class="icon-container">
-                        <a href="https://www.instagram.com/niktesija/" target="_blank">instagram</a>
-                        <a href="https://www.linkedin.com/in/nicholas-tesija/" target="_blank">linkedIn</a>
-                        <a href="mailto:contact@nik.horse" target="_blank">e-mail me</a>
-                    </div>
+    <div class="nav-button-container">
+        <a class="nav-button about-button" role="navigation" href="about.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    about me
                 </div>
             </div>
-            <div class="right-side">
-                <h2>things I do</h2>
-
-                <div class="box-thing">
-                    <h3>stone sculptures</h3>
-                    <span class="text">
-                        I recently started learning to sculpt stone. I'm still finding my style but enjoying the process
-                    </span>
-                    <br />
-                    <a href="stone-sculptures.html">this is a page with more info about my sculptures. contians some
-                        nsfw
-                        images</a>
-                </div>
-
-                <div class="box-thing">
-                    <h3>programming</h3>
-                    <span class="text">
-                        I worked at Google on Search, making it a pretty website as a front end engineer.
-                        This website is my attempt to live life without Figma mocks or a javascript framework,
-                        everything is
-                        vanilla js.
-                    </span>
-                    <br />
-                    <span class="text">
-                        Right now I am working on an exploration adventure game where you can shrink
-                        and grow.
-                    </span>
-                    <br />
-                    <a href="shrinko.html">check out the shrinko page for more info</a>
-                </div>
-
-                <div class="box-thing">
-                    <h3>music</h3>
-                    <span class="text">
-                        I make music under the name NNIK. It used to be Nautical Nik, but then someone said it sounded
-                        like I
-                        would be singing sea shanties (which would be cool but I don't). I like to make simple sounding
-                        songs
-                        that evoke the same feeling as using the spray can tool in MS Paint (they're ok). I hate my
-                        voice but I
-                        still sing.
-                    </span>
-                    <br />
-                    <a href="music.html">this is a page with more info about my music.</a>
-                </div>
-
-                <div class="box-thing">
-                    <h3>videos</h3>
-                    <span class="text">
-                        I often walk around with my hi8 video camera and film random things. I try to capture the
-                        essence of
-                        old family videos.
-                    </span>
-                    <br />
-                    <a href="videos.html">this is a page with more info about my videos.</a>
-                </div>
-
-                <div class="box-thing">
-                    <h3>photo</h3>
-                    <span class="text">
-                        I take pictures on 35mm film cameras for fun. Mostly of my friends, but some times I take
-                        pictures
-                        of
-                        other
-                        things too.
-                    </span>
-                    <div class="box-thing row">
-                        <div class="multi">
-                            <img width="300px" src="images/telephones.jpg" alt="a 35mm photo of some payphones">
-                            <span class="text">
-                                This is a picture I took on film of some payphones near Morro Bay. Kinda cool and eerie
-                                to
-                                see
-                                that this stuff is still lying around. I had a realization recently that I don't think I
-                                ever
-                                actually used a pay phone as a kid.
-                            </span>
-                        </div>
-                        <div class="multi">
-                            <img width="300px" src="images/picnik.jpg" alt="a 35mm photo of a picnic">
-                            <span class="text">
-                                My parents visit me sometimes and I like to record those moments. Here is us having a
-                                picnic in Napa. We ate a lot of bread and cheese and drank a lot of wine.
-                            </span>
-                        </div>
-                    </div>
+        </a>
+        <a class="nav-button shrinko-button" role="navigation" href="https://shrinko.world">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    shrinko's big adventure
                 </div>
             </div>
-        </div>
+        </a>
+        <a class="nav-button stone-button" role="navigation" href="stone-sculptures.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    stone sculptures
+                </div>
+            </div>
+        </a>
+        <a class="nav-button piano-button" role="navigation" href="piano.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    piano
+                </div>
+            </div>
+        </a>
+        <a class="nav-button videos-button" role="navigation" href="videos.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    videos
+                </div>
+            </div>
+        </a>
+        <a class="nav-button music-button" role="navigation" href="music.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    music
+                </div>
+            </div>
+        </a>
+        <a class="nav-button web-button" role="navigation" href="websites.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    websites
+                </div>
+            </div>
+        </a>
+        <a class="nav-button friends-button" role="navigation" href="friends.html">
+            <div class="border-animation"></div>
+            <div class="hover-text">
+                <div class="hover-text-content">
+                    friends
+                </div>
+            </div>
+        </a>
+        <a class="nav-button no-content" role="navigation">
+            <div class="border-animation"></div>
+            <div class="no-content-text">
+                Nik
+            </div>
+        </a>
+        <a class="nav-button no-content" role="navigation">
+            <div class="border-animation"></div>
+            <div class="no-content-text">
+                Nik
+            </div>
+        </a>
+        <a class="nav-button no-content" role="navigation">
+            <div class="border-animation"></div>
+            <div class="no-content-text">
+                Nik
+            </div>
+        </a>
+        <a class="nav-button no-content" role="navigation">
+            <div class="border-animation"></div>
+            <div class="no-content-text">
+                Nik
+            </div>
+        </a>
     </div>
-    <script src="background.js"></script>
+
+    <footer class="footer">
+        <div class="footer-name">
+            Nik Tesija
+        </div>
+    </footer>
 </body>
 
 </html>

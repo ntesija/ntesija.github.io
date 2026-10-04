@@ -1,154 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <title>about</title>
-    <link rel="icon"
-          href="images/favicon.ico"
-          type="image/ico"
-          sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>nik tesija - about</title>
+    <meta name="description" content="Nik Tesija's personal website with all the stuff he's made">
     <script src="site-footer.js"></script>
-    <style>
-        body {
-            background: black;
-            background-blend-mode: screen;
-        }
-
-        h1 {
-            color: #cef8ec;
-        }
-
-        .text-area {
-            background-color: #cef8ec;
-            border: 6px double black;
-            padding: 2px;
-            margin-bottom: 8px;
-            width: fit-content;
-        }
-
-        @keyframes moving {
-            0% {
-                transform: translate(-.5vw, -.5vh);
-            }
-
-            50% {
-                transform: translate(.5vw, .5vh);
-            }
-
-            100% {
-                transform: translate(-.5vw, -.5vh);
-            }
-
-        }
-
-        .moving {
-            animation: moving 4s ease-in-out infinite;
-            position:fixed;
-            top:-.5vh;
-            left: -.5vw;
-            z-index: -1;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
 </head>
 
 <body>
-    <site-footer></site-footer>
+    <div>
+        <div class="page">
+            <div class="footer-container">
+                <site-footer></site-footer>
+            </div>
+            <div class="left-side">
+                <div class="banner-text" id="banner-text">
+                    <h1>nik tesija</h1>
+                </div>
+                <img height="200px" src="images/portrait.png">
+                <div class="header-text">
+                    <div class="icon-container">
+                        <a href="https://www.instagram.com/niktesija/" target="_blank">instagram</a>
+                        <a href="https://www.linkedin.com/in/nicholas-tesija/" target="_blank">linkedIn</a>
+                        <a href="mailto:contact@nik.horse" target="_blank">e-mail me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h2>things I do</h2>
 
-    <h1>about</h1>
+                <div class="box-thing">
+                    <h3>stone sculptures</h3>
+                    <span class="text">
+                        I recently started learning to sculpt stone. I'm still finding my style but enjoying the process
+                    </span>
+                    <br />
+                    <a href="stone-sculptures.html">this is a page with more info about my sculptures. contians some
+                        nsfw
+                        images</a>
+                </div>
 
-    <div class="text-area">
-        <p>This site uses no frameworks, I did everything in vanilla javascript. Check out the piano room as it is
-            really
-            cool.</p>
+                <div class="box-thing">
+                    <h3>programming</h3>
+                    <span class="text">
+                        I worked at Google on Search, making it a pretty website as a front end engineer.
+                        This website is my attempt to live life without Figma mocks or a javascript framework,
+                        everything is
+                        vanilla js and css.
+                    </span>
+                    <br />
+                    <span class="text">
+                        Right now I am working on an exploration adventure game where you can shrink
+                        and grow.
+                    </span>
+                    <br />
+                    <a href="shrinko.html">check out the shrinko page for more info</a>
+                </div>
 
-        <p>I hope you liked my website. It looks terrible and I am proud of that.</p>
+                <div class="box-thing">
+                    <h3>music</h3>
+                    <span class="text">
+                        I make music under the name NNIK. It used to be Nautical Nik, but then someone said it sounded
+                        like I
+                        would be singing sea shanties (which would be cool but I don't). I like to make simple sounding
+                        songs
+                        that evoke the same feeling as using the spray can tool in MS Paint (they're ok). I hate my
+                        voice but I
+                        still sing.
+                    </span>
+                    <br />
+                    <a href="music.html">this is a page with more info about my music.</a>
+                </div>
+
+                <div class="box-thing">
+                    <h3>videos</h3>
+                    <span class="text">
+                        I often walk around with my hi8 video camera and film random things. I try to capture the
+                        essence of
+                        old family videos.
+                    </span>
+                    <br />
+                    <a href="videos.html">this is a page with more info about my videos.</a>
+                </div>
+
+                <div class="box-thing">
+                    <h3>photo</h3>
+                    <span class="text">
+                        I take pictures on 35mm film cameras for fun. Mostly of my friends, but some times I take
+                        pictures
+                        of
+                        other
+                        things too.
+                    </span>
+                    <div class="box-thing row">
+                        <div class="multi">
+                            <img width="300px" src="images/telephones.jpg" alt="a 35mm photo of some payphones">
+                            <span class="text">
+                                This is a picture I took on film of some payphones near Morro Bay. Kinda cool and eerie
+                                to
+                                see
+                                that this stuff is still lying around. I had a realization recently that I don't think I
+                                ever
+                                actually used a pay phone as a kid.
+                            </span>
+                        </div>
+                        <div class="multi">
+                            <img width="300px" src="images/picnik.jpg" alt="a 35mm photo of a picnic">
+                            <span class="text">
+                                My parents visit me sometimes and I like to record those moments. Here is us having a
+                                picnic in Napa. We ate a lot of bread and cheese and drank a lot of wine.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <canvas id='cnvs' class="moving""></canvas>
-
-    <site-footer></site-footer>
+    <script src="background.js"></script>
 </body>
-
-<script>
-    // Taken from https://github.com/joeiddon/perlin/blob/master/perlin.js
-
-    'use strict';
-    let perlin = {
-        rand_vect: function () {
-            let theta = Math.random() * 2 * Math.PI;
-            return { x: Math.cos(theta), y: Math.sin(theta) };
-        },
-        dot_prod_grid: function (x, y, vx, vy) {
-            let g_vect;
-            let d_vect = { x: x - vx, y: y - vy };
-            if (this.gradients[[vx, vy]]) {
-                g_vect = this.gradients[[vx, vy]];
-            } else {
-                g_vect = this.rand_vect();
-                this.gradients[[vx, vy]] = g_vect;
-            }
-            return d_vect.x * g_vect.x + d_vect.y * g_vect.y;
-        },
-        smootherstep: function (x) {
-            return 6 * x ** 5 - 15 * x ** 4 + 10 * x ** 3;
-        },
-        interp: function (x, a, b) {
-            return a + this.smootherstep(x) * (b - a);
-        },
-        seed: function () {
-            this.gradients = {};
-            this.memory = {};
-        },
-        get: function (x, y) {
-            if (this.memory.hasOwnProperty([x, y]))
-                return this.memory[[x, y]];
-            let xf = Math.floor(x);
-            let yf = Math.floor(y);
-            //interpolate
-            let tl = this.dot_prod_grid(x, y, xf, yf);
-            let tr = this.dot_prod_grid(x, y, xf + 1, yf);
-            let bl = this.dot_prod_grid(x, y, xf, yf + 1);
-            let br = this.dot_prod_grid(x, y, xf + 1, yf + 1);
-            let xt = this.interp(x - xf, tl, tr);
-            let xb = this.interp(x - xf, bl, br);
-            let v = this.interp(y - yf, xt, xb);
-            this.memory[[x, y]] = v;
-            return v;
-        }
-    }
-    perlin.seed();
-
-    let cnvs = document.getElementById('cnvs');
-    cnvs.width = window.innerWidth * 1.5;
-    cnvs.height = window.innerHeight *1.5;
-    let ctx = cnvs.getContext('2d');
-
-    const GRID_SIZE = 8;
-    const RESOLUTION = 32;
-    const COLOR_SCALE = 1;
-    const GREY_COLOR = 200;
-
-    let mapRange = (value, inMin, inMax, outMin, outMax) => {
-        return outMin + (value - inMin) * (outMax - outMin) / (inMax - inMin);
-    }
-
-    let pixel_size = cnvs.width / RESOLUTION;
-    let num_pixels = GRID_SIZE / RESOLUTION;
-    for (let y = 0; y < GRID_SIZE; y += num_pixels / GRID_SIZE) {
-        for (let x = 0; x < GRID_SIZE; x += num_pixels / GRID_SIZE) {
-            let v = perlin.get(x, y);//parseFloat(perlin.get(x, y) * COLOR_SCALE);
-            ctx.fillStyle = `rgb(${GREY_COLOR} ${GREY_COLOR} ${GREY_COLOR} / ${mapRange(v, 0, 1, 0, 5)}%)`;
-            ctx.fillRect(
-                x / GRID_SIZE * cnvs.width,
-                y / GRID_SIZE * cnvs.height,
-                pixel_size,
-                pixel_size
-            );
-        }
-    }
-</script>
 
 </html>
