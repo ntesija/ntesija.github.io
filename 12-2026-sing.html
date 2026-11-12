@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>nik tesija - mario party</title>
+   <link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
+   <script src="site-footer.js"></script>
+   <style>
+      body {
+         background: #80fda9;
+         height: 100vh;
+      }
+
+      .header {
+         display: flex;
+         align-items: center;
+      }
+
+      .text-area {
+         background-color: #d3ffd2;
+         border: 6px double black;
+         margin-bottom: 8px;
+         padding: 2px;
+         width: fit-content;
+      }
+   </style>
+</head>
+
+<body>
+   <site-footer></site-footer>
+
+   <div class="header">
+      <img src="invites/christmas-gifs/joy.gif" height="100px">
+      <h1>karaoke december xxth 9 (10?) p.m.</h1>
+      <img src="invites/christmas-gifs/joy.gif" height="100px">
+   </div>
+
+   <img src="invites/christmas-gifs/garland.gif" height="50px">
+   <img src="invites/christmas-gifs/garland.gif" height="50px">
+   <img src="invites/christmas-gifs/garland.gif" height="50px">
+
+   <h1>Info</h1>
+   <div class="text-area">
+
+      <p> i have booked {PLACE} <b>xxth of decemeber xxp.m.</b>
+      </p>
+      <p> rsvp: <button id="share">text nik</button> "<i id="share-text">good day sir or madam, i'd like to come to
+            karaoke please and thank you, have a wonderful day</i>"</p>
+
+      <div class="header">
+         <img src="invites/christmas-gifs/santa.gif" height="100px">
+         <img src="invites/christmas-gifs/karaoke.gif" height="100px">
+         <img src="invites/christmas-gifs/hholidays.gif" height="100px">
+      </div>
+   </div>
+
+   <h1>FAQ</h1>
+
+   <h2>how many people can come?</h2>
+   <div class="text-area">
+      <p>
+         i have booked the place for 10 guests. so 8 more but if enough people are interested i'm sure we can expand it
+      </p>
+   </div>
+
+   <h2>what time should we come</h2>
+   <div class="text-area">
+      <p>
+         we have the room at xxpm, come early and have drinks with us! i'll try to be there by 8/9?
+      </p>
+   </div>
+
+   <h2>do i have to sing</h2>
+   <div class="text-area">
+      <p>
+         you <b>must</b> to sing a minimum of one (1) song
+      </p>
+   </div>
+
+   <h2>i dont like singing in front of strangers</h2>
+   <div class="text-area">
+      <p>
+         this is a private room, it is just friends, we will be drinking, as mentioned above you <b>must</b> sing one
+         (1) song. No exceptions.
+      </p>
+   </div>
+
+   <img src="invites/christmas-gifs/1997.gif" height="150px">
+   <img src="invites/christmas-gifs/christmas96.gif" height="150px">
+
+   <script>
+      const shareButton = document.getElementById('share');
+      const shareText = document.getElementById('share-text');
+      const shareData = {
+         text: shareText.innerText,
+      };
+
+      shareButton.addEventListener("click", async () => {
+         try {
+            await navigator.share(shareData);
+         } catch (err) { }
+      });
+   </script>
+</body>
+
+</html>
